@@ -1,0 +1,257 @@
+<html> 
+<head>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.ie.css" />    
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<!-- Leafleat Plugins -->
+	<link rel="stylesheet" href="http://www.ign.gob.gt/Leaflet.MousePosition-master/src/L.Control.MousePosition.css" />
+	<script src="http://www.ign.gob.gt/Leaflet.MousePosition-master/src/L.Control.MousePosition.js" type="text/javascript"></script>
+</head>  
+<body> 
+    <div style="width:100%; height:100%" id="map"></div>    
+	<script> 
+	var map = L.map('map',{crs: L.CRS.EPSG4326}).setView([15.9082, -90.23071], 7);    
+
+   	//Minimap
+//    var osm2 = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+//       {minZoom: 0, maxZoom: 13}); 
+//    var miniMap = new L.Control.MiniMap(osm2,{ toggleDisplay: true }).addTo(map); 
+
+    //circle as a marker
+	markers = [
+	   {
+		 "name": "GUAT",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "Si",
+		 "url": "http://igs.org/igsnetwork/network_by_site.php?site=guat",		 
+		 "lat": 14.57631,
+		 "lng": -90.53579		 
+	   },	    
+	   {
+		 "name": "ELEN",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "Si",		 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#elena",
+		 "lat": 16.916056,
+		 "lng": -89.867614
+	   },
+	   {
+		 "name": "HUEH",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "No",		 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#huehue",
+		 "lat": 15.318142,
+		 "lng": -91.502692
+	   },
+	   {
+		 "name": "CATR",		 
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "No",		 		 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#mita",
+		 "lat": 14.45931170000000066,
+		 "lng": -89.74264503999999931
+	   },
+	   {
+		 "name": "TIKA",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "No",			 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#tikal",
+		 "lat": 17.224532,
+		 "lng": -89.612333
+	   },	   	   
+	   {
+		 "name": "MRLS",
+		 "name1": "30s",
+		 "name2": "GPS",
+		 "name3": "No",			 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#morales",
+		 "lat": 15.4622489999999928,
+		 "lng": -88.84973225000003083
+	   },	   	   	   
+	   {
+		 "name": "TAXI",
+		 "name1": "30s",
+		 "name2": "GPS",
+		 "name3": "Si",			 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#taxisco",
+		 "lat": 14.03480511000000241,
+		 "lng": -90.46528446000000656
+	   },	   	   	  	   
+	   {
+		 "name": "CHIS",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "Si",			 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#chisec",
+		 "lat": 15.81225465999999891,
+		 "lng": -90.2913547699999981
+	   },	   	   	  	   
+	   {
+		 "name": "CHIQ",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "No",			 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#chicaman",
+		 "lat": 15.35009863000000152,
+		 "lng": -90.75211717999999905
+	   },	   	   	  	   	   
+	   {
+		 "name": "TINT",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "No",			 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#tinta",
+		 "lat": 15.31767438000000148,
+		 "lng": -89.86767437999999686
+	   },	   	   	  	   		   
+	   {
+		 "name": "BARI",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "No",			 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#barillas",
+		 "lat": 15.80184439999999846,
+		 "lng": -91.31480268999999339
+	   },	   	   	  		   
+	   {
+		 "name": "COAT",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "No",			 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#coate",
+		 "lat": 14.70186238999999695,
+		 "lng": -91.88451468999998895
+	   },	   	   	  		   
+	   {
+		 "name": "COTZ",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "No",			 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#cotzu",
+		 "lat": 14.33472222000000151,
+		 "lng": -91.05805555999999967
+	   },	   	  	   
+	   {
+		 "name": "SAYA",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "No",			 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#sayaxche",
+		 "lat": 16.52046319000000096,
+		 "lng": -90.19230853999999908
+	   },	   	  		   
+	   {
+		 "name": "NARA",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "Si",			 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#naranjo",
+		 "lat": 17.22676171999999895,
+		 "lng": -90.81000262000000589
+	   },	   	  		 
+	   {
+		 "name": "POPT",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "Si",			 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#poptun",
+		 "lat": 16.32542066770763967,
+		 "lng": -89.41053155970951138
+	   },	   	  	
+	   {
+		 "name": "ZACA",
+		 "name1": "30s",
+		 "name2": "GPS+GLONASS",
+		 "name3": "No",			 
+		 "url": "http://www.ign.gob.gt/sitios-cors.html#gualan",
+		 "lat": 15.11300895000000111,
+		 "lng": -89.3557227499999982
+	   }	   	  		   
+	];
+
+//	for ( var i=0; i < markers.length; ++i ) 
+//	{
+//	   L.marker( [markers[i].lat, markers[i].lng] )
+//		  .bindPopup('<a href="' + markers[i].url + '" target="_blank">' + markers[i].name + '</a>' + '<br>' + '<a href="' + "ftp://181.114.15.117 " + '" target="_blank">' + "DATOS" + '</a>')
+//		  .addTo(map);
+//	}
+	for ( var i=0; i < markers.length; ++i ) 	
+		L.circle( [markers[i].lat, markers[i].lng], 50000, {
+			color: 'red',
+			fillColor: '#f03',
+			fillOpacity: 0.1
+		}).addTo(map).bindPopup('Nombre: ' + markers[i].name + '<br>' + 'Intervalo de lectura: ' + markers[i].name1 + '<br>' + 'GNSS: ' + markers[i].name2 + '<br>' + 'Sensor Meteorologico: ' + markers[i].name3 + '<br>' + '<a href="' + markers[i].url + '" target="_blank">' + "+ Info del sitio" + '</a>')
+		
+//		}).addTo(map).bindPopup('<a href="' + markers[i].url + '" target="_blank">' + markers[i].name1 + '</a>' + '<br>' + '<a href="' + "ftp://181.114.15.117 " + '" target="_blank">' + "DATOS" + '</a>')
+	
+	
+	var popup = L.popup();
+
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent("Tu Posicon " + e.latlng.toString())
+			.openOn(map);
+	}
+
+	map.on('click', onMapClick);
+		
+	
+	//MousePosition
+
+    var mousePosition = new L.Control.MousePosition().addTo(map); 
+
+	// Insertando una leyenda en el mapa
+ 
+	var legend = L.control({position:"bottomright"});
+
+	legend.onAdd = function (map) {
+
+	var div = L.DomUtil.create("div", "info legend");
+
+	div.innerHTML ="<img alt=”legend” src='http://www.ign.gob.gt/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=cartografia_basica:Red%20Geodesica%20Activa%20CORS' width=”127″ height=”120″ />";
+	
+	return div;
+	};
+	legend.addTo(map); 
+	//prueba de control
+    	
+	var capa1 = L.tileLayer.wms("http://vmap0.tiles.osgeo.org/wms/vmap0",   
+	    {   layers: 'basic', 
+	        format: 'image/png', 
+	        transparent: true, 
+	        attribution: "OsGEO"
+	    });      
+		capa1.addTo(map);
+
+    var capa2 = L.tileLayer.wms("http://www.ign.gob.gt/geoserver/cartografia_basica/wms",
+        {
+            layers: 'cartografia_basica:Departamentos',
+            format: 'image/png',
+            transparent: true,
+            attribution: "Departamentos"
+        });	
+		capa2.addTo(map);
+
+    var capa3 = L.tileLayer.wms("http://www.ign.gob.gt/geoserver/cartografia_basica/wms",
+        {
+            layers: 'cartografia_basica:Red Geodesica Activa CORS',
+            format: 'image/png',
+            transparent: true,
+            attribution: "Red Geodesica Activa CORS"
+        });	
+		capa3.addTo(map);
+				
+    var overlays = {"Departamentos": capa2, "Red Geodesica Activa CORS": capa3};		
+	var baseLayers = {"OSGEO": capa1};
+        L.control.layers(baseLayers, overlays).addTo(map);
+        L.control.scale().addTo(map);	
+
+	</script> 
+</body> 
+</html>

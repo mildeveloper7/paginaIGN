@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>-IGN- Red Geodésica</title>
+	<link rel="icon" href="img/originalign.ico">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<!-- styles -->
+	<link rel="stylesheet" href="http://owsgip.itc.utwente.nl/base/ExtJS/resources/css/ext-all.css"/>
+	<link rel="stylesheet" href="http://owsgip.itc.utwente.nl/base/GeoExt/resources/css/geoext-all.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<style type="text/css">
+
+		.responsive{
+			width: 100%;
+			height: 0;
+			padding-bottom: 56.25%;
+			position: relative;
+		}
+
+		.responsive iframe {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+
+	</style>
+</head>
+<body>
+	<header>
+	<div class="img-responsive text-center img">
+		<img src="img/originalign.png" alt="">
+		<img src="img/originalmaga.png" alt="">
+	</div>
+	<nav class="navbar navbar-toggleable-md navbar-inverse navbar-fixed-top bg-primary menu">
+		<div class="container">
+			<button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#fm-menu" aria-controls="fm-menu" aria-expanded="false" aria-label="Menu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<a href="index.html" class="navbar-brand">- IGN -</a>
+
+			<div class="collapse navbar-collapse" id="fm-menu">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a href="index.html" class="nav-link">INICIO</a>
+					</li>
+					<li class="nav-item">
+						<a href="institucion.html" class="nav-link">INSTITUCIÓN</a>
+					</li>
+					<li class="nav-item">
+						<a href="productos.html" class="nav-link">MERCADEO Y VENTAS</a>
+					</li>
+					<li class="nav-item">
+						<a href="proyectos.html" class="nav-link">PROYECTOS</a>
+					</li>
+					<li class="nav-item">
+						<a href="redgeodesica.html" class="nav-link active">RED GEODÉSICA</a>
+					</li>
+					<li class="nav-item">
+						<a href="contacto.html" class="nav-link">CONTACTO</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+<!-- INCIADO EL MAPA DE GOEDESIA -->
+<div class="container">
+  <section class="responsive">
+                <!-- Imagen del card de Bajo de carouse -->
+                <iframe scrolling="auto" src="geoportal/index_cors.html" frameborder="0" height="900" width="900"></iframe>
+
+                <!-- INICIANDO EL MODAL PARA LAS FOTOS -->
+      </section>
+</div>
+<br>
+
+<div class="container">
+	<div class="row mt-3">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-block">
+					<h1 class="mb-3 text-center ">Red de estaciones de referencia de operación continua -CORS-</h1>
+						<hr>
+						<p class="text-justify">La red CORS es una red geodésica de estaciones de referencia de operación
+							 continua, o CORS por sus siglas en inglés (Continiously Operating Reference Station).
+							 Una estación CORS se compone básicamente de un receptor GPS estático que
+							 se posiciona de manera permanente en una localidad geográfica conocida,
+							 y recolecta datos las 24 horas del día, 7 días a la semana. Estos datos
+							 son transmitidos por medio de una red de computadoras hacia un servidor
+							 central, en donde estos son almacenados para su uso posterior.</p>
+							 <br>
+						<p class="text-justify">El funcionamiento de las Estaciones de Referencia de Operación
+							Continua –CORS– permitirá realizar levantamientos catastrales de manera rápida y
+							eficiente en toda la República de Guatemala, relacionándolos a través una conversión
+							sencilla al Sistema de Referencia Nacional. Es por ello que el Registro de Información
+							Catastral –RIC– ha apoyado técnica y financieramente al Instituto Geográfico Nacional
+							–IGN– para el establecimiento de este sistema.</p>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+<!--Google map-->
+
+
+
+	<footer class="container-fluid text-center">
+  <hr/>
+  <div role="contentinfo">
+      <p>
+       		 Instituto Geográfico Nacional
+       		  <br>
+       		   Avenida Las Américas 5-76 zona 13, Guatemala.
+					Tel: 24137188 - 24137190.
+					 <br>
+					 <span class="icon-facebook"></span>
+       			 <a href="http://www.facebook.com/Instituto-Geográfico-Nacional-IGN-">Facebook</a>
+    </p>
+  </div>
+  	      <p>&copy; Copyright 2019</p>
+</footer>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<!--Google Maps-->
+<script src="https://maps.google.com/maps/api/js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+
+
+  <!-- ExtJS libraries -->
+  <script src="http://owsgip.itc.utwente.nl/base/ExtJS/adapter/ext/ext-base.js"></script>
+  <script src="http://owsgip.itc.utwente.nl/base/ExtJS/ext-all.js"></script>
+
+  <!-- Geo Scripts -->
+  <script src="http://owsgip.itc.utwente.nl/base/OpenLayers/OpenLayers.js"></script>
+  <script src="http://owsgip.itc.utwente.nl/base/GeoExt/lib/GeoExt.js"></script>
+
+  <!-- the control script -->
+  <script src="scripts/control.js"></script>
+</body>
+</html>
