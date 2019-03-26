@@ -1,2 +1,2 @@
-# paginaIGN
+# paginawebejemplo
 Proyecto de pagina web
